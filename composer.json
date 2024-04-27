@@ -1,0 +1,43 @@
+{
+    "name": "vtardia/simphle-messaging-sparkpost",
+    "description": "SparkPost transport component for Simphle Messaging",
+    "type": "library",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vtardia/simphle-messaging.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Simphle\\Messaging\\Email\\Provider\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.2",
+        "ext-fileinfo": "*",
+        "psr/log": "^3",
+        "vtardia/simphle-messaging": "^1",
+        "php-http/guzzle7-adapter": "^1.0",
+        "sparkpost/sparkpost": "^2.3",
+        "php-http/message-factory": "^1.1"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "vimeo/psalm": "^6.x-dev",
+        "squizlabs/php_codesniffer": "^3"
+    },
+    "scripts": {
+        "cs:lint": "phpcs -p --standard=PSR12 --colors src",
+        "cs:fix": "phpcbf -p --standard=PSR12 --colors src",
+        "analyze": "psalm --no-cache",
+        "analyze:deep": "psalm --show-info=true --no-cache"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
